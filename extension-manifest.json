@@ -1,0 +1,78 @@
+{
+  "manifestVersion": 1,
+  "id": "JasperGilhuis-vsts-build-task-set-versions",
+  "name": "Set Version Information",
+  "version": "1.0.12",
+  "publisher": "jaspergilhuis",
+  "public": false,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Build Extension that allows you to set version information for Assembly.* files.",
+  "categories": [
+    "Build and release"
+  ],
+  "tags": [
+    "powershell",
+    "build",
+    "inline",
+    "azure",
+    "azurepowershell"
+  ],
+  "screenshots": [
+    {
+      "path": "vsts-build-task-set-versions.extension/images/screenshots/Set-Version-Info-Task.png"
+	},
+	{
+      "path": "vsts-build-task-set-versions.extension/images/screenshots/Set-Version-Info-Details.png"
+	}
+	,
+	{
+      "path": "vsts-build-task-set-versions.extension/images/screenshots/Set-Version-Info-File-Details.png"
+	}
+	
+  ],
+  "content": {
+    "details": {
+      "path": "vsts-build-task-set-versions.extension/readme.md"
+    },
+    "license": {
+      "path": "vsts-build-task-set-versions.extension/license.txt"
+    }
+  },
+  "links": {
+    "getstarted": {
+      "uri": "https://github.com/JasperGilhuis/vsts-build-task-set-versions/wiki"
+    },
+    "support": {
+      "uri": "https://github.com/JasperGilhuis/vsts-build-task-set-versions/wiki"
+    }
+  },
+  "branding": {
+    "color": "#F9F9F9",
+    "theme": "light"
+  },
+  "icons": {
+    "default": "vsts-build-task-set-versions.extension/images/extension-icon.png"
+  },
+  "files": [
+    {
+      "path": "vsts-build-task-set-versions"
+    }
+  ],
+
+  "contributions": [
+    {
+      "id": "vsts-build-task-set-versions",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "vsts-build-task-set-versions"
+      }
+    } 
+  ]
+}

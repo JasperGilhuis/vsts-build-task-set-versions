@@ -1,0 +1,69 @@
+{
+  "id": "c63d5c80-043e-4821-bc68-94db3e1ae962",
+  "name": "SetVersionInfo",
+  "friendlyName": "Set Version Information",
+  "description": "Apply assembly versioning to your C# or VB.NET projects",
+  "author": "Jasper Gilhuis - Xpirit",
+  "helpMarkDown": "This activity helps setting Assembly Information across solutions during build time. More infomation can be found here: https://github.com/JasperGilhuis/vsts-build-task-set-versions/wiki",
+  "category": "Utility",
+  "visibility": [
+    "Build"
+  ],
+  "demands": [ ],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "12"
+  },
+  "minimumAgentVersion": "1.83.0",
+  "instanceNameFormat": "Set Version Information",
+  "inputs": [
+    {
+      "name": "sourceDirectory",
+      "type": "filePath",
+      "label": "Source Directory",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Reletive path to start searching for AssemblyInfo.* files, starts in $(Build.SourcesDirectory). https://github.com/JasperGilhuis/vsts-build-task-set-versions/wiki"
+    },
+    {
+      "name": "assemblyVersion",
+      "type": "string",
+      "label": "Assembly Version",
+      "defaultValue": "1.0.C.D",
+      "required": true,
+      "helpMarkDown": "Pattern for the Assembly Version number, C.D. will be replaced by build information. See Wiki for more info https://github.com/JasperGilhuis/vsts-build-task-set-versions/wiki"
+    },
+    {
+      "name": "assemblyFileVersion",
+      "type": "string",
+      "label": "Assembly File Version",
+      "defaultValue": "1.0.C.D",
+      "required": true,
+      "helpMarkDown": "Pattern for the Assembly File Version number, C.D. will be replaced by build information. See Wiki for more info https://github.com/JasperGilhuis/vsts-build-task-set-versions/wiki"
+    },
+    {
+      "name": "assemblyInformationalVersion",
+      "type": "string",
+      "label": "Assembly Informational Version",
+      "defaultValue": "Output created by build $(Build.DefinitionName) - $(Build.BuildNumber)",
+      "required": true,
+      "helpMarkDown": "Specify assembly informational version information. See Wiki for more info https://github.com/JasperGilhuis/vsts-build-task-set-versions/wiki"
+    },
+    {
+      "name": "buildNumber",
+      "type": "string",
+      "label": "Build Number",
+      "defaultValue": "$(Build.BuildNumber)",
+      "required": true,
+      "helpMarkDown": "Specify the build number, expects a specific format. See Wiki for more info https://github.com/JasperGilhuis/vsts-build-task-set-versions/wiki"
+    }
+  ],
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\SetVersionInfo.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}
